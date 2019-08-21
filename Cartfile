@@ -1,0 +1,4 @@
+github "SVProgressHUD/SVProgressHUD"
+github "Alamofire/AlamofireImage" ~> 3.3
+github "ReactiveX/RxSwift"
+github "SwiftyJSON/SwiftyJSON"
