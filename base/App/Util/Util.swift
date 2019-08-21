@@ -2,44 +2,6 @@ import Foundation
 import UIKit
 
 class Util {
-    /**
-     ファイルデータからMimeTypeを取得
-     - parameter data: ファイルデータ
-     */
-    static func getMimeTypeFromData(data: NSData?) -> String {
-        let def: String = "application/octet-stream"
-        guard let data = data else {
-            return def
-        }
-        var firstByte: Int = 0;
-        data.getBytes(&firstByte, range: NSRange(location:0, length: 1))
-        switch (firstByte) {
-        case 0xFF:
-            return "image/jpeg"
-        case 0x89:
-            return "image/png"
-        case 0x47:
-            return "image/gif"
-        case 0x49, 0x4D:
-            return "image/tiff"
-        case 0x25:
-            return "application/pdf"
-        case 0xD0:
-            return "application/vnd"
-        case 0x46:
-            return "text/plain"
-        default:
-            return def
-        }
-    }
-    
-    static func toString(value:Int?) -> String? {
-        if let value = value {
-            return String(value)
-        } else {
-            return nil
-        }
-    }
     
     static func enableScrollview(viewDelegate:UIScrollViewDelegate,  scrollview: UIScrollView){
         scrollview.contentSize = CGSize(width: Constants().screenWidth, height: Constants().screenHeight + Constants().keyBoardHeight)
@@ -108,20 +70,5 @@ class Util {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    static func printData(_ data: Data) -> Void {
-        print(String(data:data, encoding:String.Encoding.utf8)!)
-    }
-    
-    static func printNSData(_ data:NSData) -> Void {
-        print(String(data:data as Data, encoding:String.Encoding.utf8)!)
-    }
-    
-    static func setWebView(_ vc:UIWebViewDelegate, webView:UIWebView, url:String) {
-        print(url)
-        webView.delegate = vc
-        let requestURL = URL(string: url)
-        let request = URLRequest(url: requestURL!)
-        webView.loadRequest(request)
-    }    
 }
 
