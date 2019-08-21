@@ -1,11 +1,3 @@
-//
-//  RxSwift+FilterNil.swift
-//  kimibasho
-//
-//  Created by アジアクエスト株式会社 on 2017/06/12.
-//  Copyright © 2017年 AsiaQuest,Inc. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 

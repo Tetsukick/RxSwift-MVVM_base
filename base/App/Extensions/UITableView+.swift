@@ -1,11 +1,3 @@
-//
-//  UITableView+.swift
-//  base
-//
-//  Created by asiaquest on 2017/09/13.
-//  Copyright © 2017年 asiaquest. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
